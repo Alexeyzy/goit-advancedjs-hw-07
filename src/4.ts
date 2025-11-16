@@ -21,13 +21,11 @@ class Person {
 abstract class House {
   protected door: boolean = false;
   protected key: Key;
-  protected tenants: Person[] = [];
   constructor(key: Key) {
     this.key = key;
   }
   comeIn(person: Person): void {
     if (this.door) {
-      this.tenants.push(person);
       console.log(`${person.getKey()} came in!`);
     } else {
       console.log("The door is closed");
